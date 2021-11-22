@@ -6,7 +6,7 @@
 /*   By: cagutier <cagutier@student.42urduli>       +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/11/18 10:10:59 by cagutier          #+#    #+#             */
-/*   Updated: 2021/11/22 12:52:39 by cagutier         ###   ########.fr       */
+/*   Updated: 2021/11/22 12:58:36 by cagutier         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -19,18 +19,18 @@ void	ft_send_bits(int pid_numb, char c)
 	bit = 0;
 	while (bit < 8)
 	{
-		if (c & (0x01 << bit) = 1)
+		if (c & (0x01 << bit) == 1)
 			kill(pid, SIGUSR1);
 		else
 			kill(pid, SIGUSR2);
 		usleep(100);
 	}
-	x++,
+	x++;
 }
 
 void	ft_send_str(int pid_numb, char str)
 {
-	int x;
+	int	x;
 
 	x = 0;
 	while (str[x] >= 32 && str[x] <= 126)
@@ -38,12 +38,13 @@ void	ft_send_str(int pid_numb, char str)
 		ft_send_bits(pid_numb, str[x]);
 		x++;
 	}
+}
 
 int	main(int argc, char **argv)
 {
 	int	pid_numb;
 	int	x;
-	
+
 	x = 0;
 	if (argc != 3)
 	{
@@ -63,5 +64,5 @@ int	main(int argc, char **argv)
 			ft_send_str(pid_numb, argv[2][x]);
 			x++;
 		}
-
+	}
 }
