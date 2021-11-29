@@ -6,7 +6,7 @@
 /*   By: cagutier <cagutier@student.42urduli>       +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/11/18 10:10:59 by cagutier          #+#    #+#             */
-/*   Updated: 2021/11/29 13:21:32 by cagutier         ###   ########.fr       */
+/*   Updated: 2021/11/29 14:55:11 by cagutier         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -22,9 +22,9 @@ void	ft_send_bits(int pid_numb, char c)
 	while (bit < 8)
 	{
 		if (c & (0x01 << bit))
-			kill(pid_numb, SIGUSR2);
-		else
 			kill(pid_numb, SIGUSR1);
+		else
+			kill(pid_numb, SIGUSR2);
 		usleep(100);
 		bit++;
 	}
