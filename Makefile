@@ -6,7 +6,7 @@
 #    By: cagutier <cagutier@student.42urduli>       +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2021/11/25 15:27:50 by cagutier          #+#    #+#              #
-#    Updated: 2021/12/01 09:57:44 by cagutier         ###   ########.fr        #
+#    Updated: 2021/12/13 09:55:05 by cagutier         ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -62,7 +62,7 @@ clean:
 
 fclean: clean
 	make -C libft/ fclean
-	$(RM) $(CLIENT) $(SERVER)
+	$(RM) $(CLIENT) $(SERVER) $(CLIENT_BONUS) $(SERVER_BONUS)
 
 re: fclean all
 

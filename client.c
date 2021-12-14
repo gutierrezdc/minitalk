@@ -6,7 +6,7 @@
 /*   By: cagutier <cagutier@student.42urduli>       +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/11/18 10:10:59 by cagutier          #+#    #+#             */
-/*   Updated: 2021/12/01 09:38:10 by cagutier         ###   ########.fr       */
+/*   Updated: 2021/12/13 10:23:05 by cagutier         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -25,7 +25,7 @@ void	ft_send_bits(int pid_numb, char c)
 			kill(pid_numb, SIGUSR1);
 		else
 			kill(pid_numb, SIGUSR2);
-		usleep(100);
+		usleep(20);
 		bit++;
 	}
 }

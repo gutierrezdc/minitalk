@@ -6,7 +6,7 @@
 /*   By: cagutier <cagutier@student.42urduli>       +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/12/01 09:39:06 by cagutier          #+#    #+#             */
-/*   Updated: 2021/12/01 13:10:49 by cagutier         ###   ########.fr       */
+/*   Updated: 2021/12/13 11:02:53 by cagutier         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -27,11 +27,10 @@ void	ft_signal_handler(int signal, siginfo_t *info, void *ucontest_t)
 	if (bit == 8)
 	{
 		ft_putchar_fd(c, 1);
-		kill(info->si_pid, SIGUSR1);
 		bit = 0;
 		c = 0;
-		usleep(30);
 	}
+	kill(info->si_pid, SIGUSR1);
 }
 
 int	main(int argc, char **argv)
@@ -57,7 +56,7 @@ int	main(int argc, char **argv)
 	{
 		sigaction(SIGUSR1, &sig, NULL);
 		sigaction(SIGUSR2, &sig, NULL);
-		pause ();
+		pause();
 	}
 	return (0);
 }
